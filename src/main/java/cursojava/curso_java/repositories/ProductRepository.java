@@ -2,13 +2,13 @@ package cursojava.curso_java.repositories;
 
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
 import cursojava.curso_java.entities.Product;
+import cursojava.curso_java.exceptions.NotFoundException;
 
 @Repository
 public class ProductRepository {
@@ -44,7 +44,7 @@ public class ProductRepository {
   public Product update(Product product) {
     Optional<Product> foundedProduct = getById(product.getId());
     if (foundedProduct.isEmpty()) {
-      throw new InputMismatchException("Produto nao encontrado");
+      throw new NotFoundException("Produto não encontrado");
     }
 
     delete(product.getId());
