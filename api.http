@@ -1,0 +1,28 @@
+###
+GET http://localhost:8080/api/products
+
+###
+GET http://localhost:8080/api/products/5
+
+###
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "bolacha",
+  "quantity": 1,
+  "price": 2.50
+}
+
+###
+PUT http://localhost:8080/api/products/2
+Content-Type: application/json
+
+{
+  "name": "bolacha juturutu",
+  "quantity": 1,
+  "price": 5.50
+}
+
+###
+DELETE http://localhost:8080/api/products/2
